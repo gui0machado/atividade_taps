@@ -19,18 +19,17 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JToolBar;
 
-public class exercicio3 extends JFrame {
+public class Exercicio3 extends JFrame {
 
-	private JPanel contentPane;
+	private JPanel conteudo;
 	TelaProntuario telaProntuario;
-	split telaSplit;
+	Split divisorDeTela;
 
-	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					exercicio3 frame = new exercicio3();
+					Exercicio3 frame = new Exercicio3();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,40 +37,34 @@ public class exercicio3 extends JFrame {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public exercicio3() {
+	
+	public Exercicio3() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 685, 506);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		conteudo = new JPanel();
+		conteudo.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setconteudo(conteudo);
+		conteudo.setLayout(null);
 		
 		JDesktopPane desktopPane = new JDesktopPane();
 		desktopPane.setBounds(675, 477, -671, -472);
-		contentPane.add(desktopPane);	
+		conteudo.add(desktopPane);	
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 93, 21);
-		contentPane.add(menuBar);
+		conteudo.add(menuBar);
 		
 		JMenu mnNewMenu = new JMenu("Adicionar");
 		menuBar.add(mnNewMenu);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("JTabbedPaneDemo");
 		mntmNewMenuItem_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
+			public void actionPerformed(ActionEvent arg0) {				
 				telaProntuario = new TelaProntuario();	
-				telaProntuario.setVisible(true);		
-				
+				telaProntuario.setVisible(true);				
 			}
 		});
-		mnNewMenu.add(mntmNewMenuItem_1);
-		
+		mnNewMenu.add(mntmNewMenuItem_1);		
 		JMenuItem mntmNewMenuItem = new JMenuItem("JSplitDemo");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
